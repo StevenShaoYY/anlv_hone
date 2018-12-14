@@ -1,5 +1,5 @@
 module.exports = {
-  index: '主页',
+  index: '安旅科技',
   'user/login': '登录',
   'customer/home': '用户首页'
 }
