@@ -10,7 +10,8 @@
   "dependencies": {
     "element-ui": "^2.4.6",
     "normalize.css": "^8.0.1",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-baidu-map": "^0.21.15"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",

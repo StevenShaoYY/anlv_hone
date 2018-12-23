@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <top-bar :active="'1'"></top-bar>
-    <el-carousel height="556px">
+    <el-carousel :height="topHeight">
       <el-carousel-item>
         <!-- <image class="img" src="../assets/herderpic.png"/> -->
         <img class="top-img" src="../../assets/herderpic1.png" alt="">
@@ -61,8 +61,8 @@
     </section>
     <section class="content-container content-container2">
       <div class="text-container text-container2">
-        <h3>旅业治安登记互联网方案</h3>
-        <p class="content">安旅科技以易公安安全终端为基础，以互联网为通道，围绕旅业治安登记管理核心业务，连接身份证阅读仪、扫描仪、证件通等外设，打造了易公安旅业治安登记方案。安旅科技深耕旅客前台交互场景设计、旅客人像识别比对、扫描证件文字识别,从而提升了旅客入住体验、简化了前台登记流程、提高了采集数据质量。</p>
+        <h3>安全终端开放服务接入方案</h3>
+        <p class="content">安旅科技以开放化、服务化、智能化为目标，通过开放平台、易公安安全终端建立了开放服务接入方案，实现了人证核验设备接入、自助机登记服务、PMS数据互通服务，为未来酒店智能化、无人化提供了基础。,从而提升了旅客入住体验、简化了前台登记流程、提高了采集数据质量。</p>
         <div class="tab-container2">
           <div class="tab-item">
             <div class="icon tab-icon8"></div>
@@ -81,7 +81,7 @@
             <p>PMS数据互通服务</p>
           </div>
         </div>
-        <div class="tomore">了解更多>></div>
+        <div class="tomore" @click="gogogo">了解更多>></div>
       </div>
       <div class="img2"></div>
     </section>
@@ -112,12 +112,33 @@ export default {
         {
           url:'../../assets/herderpic4.png'
         },
-      ]
+      ],
+      topHeight: '0px',
+      screenWidth: document.body.clientWidth
     }
   },
+  created() {
+    this.topHeight = document.body.clientWidth/3.6 -10 + 'px'
+  },
+  mounted() {
+    window.onresize = () => {
+        return (() => {
+            window.screenWidth = document.body.clientWidth
+            this.screenWidth = window.screenWidth
+        })()
+    }
+  },
+  watch: {
+      screenWidth (val) {
+        this.topHeight = val/3.6 -10 + 'px'
+      }
+  },
   methods: {
+    adjuest() {
+      this.topHeight = document.body.clientWidth/3.6 -10 + 'px'
+    },
     gogogo() {
-      location.assign('../customer/home.html')
+      location.assign('../product.html')
     },
     tototo() {
       location.assign('../user/login.html')
@@ -147,7 +168,7 @@ export default {
   width: 800px;
   height: 720px;
   background:transparent url('../../assets/sy_t2.png') no-repeat;
-  background-position:-200px -1px;
+  background-position:-200px 0px;
 }
 .content-container .text-container{
   width: 649px;

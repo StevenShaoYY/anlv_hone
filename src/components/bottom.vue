@@ -5,39 +5,39 @@
         <div class="url-container">
           <ul class="url-list">
             <li class="url-title">关于安旅</li>
-            <li class="url-content">安旅简介</li>
-            <li class="url-content">加入安旅</li>
+            <li class="url-content" @click="goTo('aboutAnlv.html')">安旅简介</li>
+            <li class="url-content" @click="goTo('addAnlv.html')">加入安旅</li>
           </ul>
           <ul class="url-list">
             <li class="url-title">服务支持</li>
-            <li class="url-content">下载中心</li>
-            <li class="url-content">联系我们</li>
+            <li class="url-content" @click="goTo('downloadcenter.html')">下载中心</li>
+            <li class="url-content" @click="goTo('concatus.html')">联系我们</li>
           </ul> 
           <ul class="url-list">
             <li class="url-title">旅业登记</li>
-            <li class="url-content">开通说明</li>
-            <li class="url-content">使用手册</li>
+            <li class="url-content" @click="goTo('usebook.html')">开通说明</li>
+            <li class="url-content" @click="goTo('usebook.html')">使用手册</li>
           </ul> 
           <ul class="url-list">
             <li class="url-title">开放平台</li>
-            <li class="url-content">接入说明</li>
-            <li class="url-content">开发手册</li>
+            <li class="url-content" @click="goTo('openplan.html')">接入说明</li>
+            <li class="url-content" @click="goTo('openplan.html')">开发手册</li>
           </ul> 
           <ul class="url-list">
             <li class="url-title">案例分享</li>
-            <li class="url-content">PMS对接</li>
-            <li class="url-content">自助机对接</li>
-            <li class="url-content">人证核验设备对接</li>
+            <li class="url-content" @click="goTo('caseshare.html')">PMS对接</li>
+            <li class="url-content" @click="goTo('caseshare.html')">自助机对接</li>
+            <li class="url-content" @click="goTo('caseshare.html')">人证核验设备对接</li>
           </ul>
         </div>
         <div class="code-container">
           <div class="code-item">
-            <!-- <img class="code-img" src="../assets/herderpic.png" alt=""> -->
-            <p>安旅小程序</p>
+            <img class="code-img" src="../assets/u67.jpg" alt="">
+            <p style="margin-top:20px;">安旅小程序</p>
           </div>
           <div class="code-item">
-            <!-- <img class="code-img" src="../assets/herderpic.png" alt=""> -->
-            <p>安旅公众号</p>
+            <img class="code-img" src="../assets/u77.jpg" alt="">
+            <p style="margin-top:20px;">安旅公众号</p>
           </div>
         </div>
       </div>
@@ -74,7 +74,8 @@ export default {
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: #2A364A;
+    /* background-color: #2A364A; */
+    background:transparent url('../assets/bottom.png') no-repeat;
     height: 288px;
     color: #97a3b7;
   }
@@ -96,7 +97,7 @@ export default {
   }
   footer .sed-container {
     color: #97a3b7;
-    margin-top: 30px;
+    margin-bottom: 30px;
   }
   .code-item {
     color: #97a3b7;
@@ -119,6 +120,7 @@ export default {
   .url-container .url-list .url-content{
     font-size: 14px;
     line-height: 40px;
+    cursor: pointer;
   }
   .url-container .url-title {
     font-size: 20px;
