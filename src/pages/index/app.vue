@@ -21,9 +21,9 @@
     </el-carousel>
     <section class="content-container">
       <div class="img1">
-        <img  src="../../assets/sy_t1.png" alt="">
+        <!-- <img  src="../../assets/sy_t1.png" alt=""> -->
       </div>
-      <div class="text-container">
+      <div class="text-container" :class="{'run-text-1': runFlag}">
         <h3>旅业治安登记互联网方案</h3>
         <p class="content">安旅科技以易公安安全终端为基础，以互联网为通道，围绕旅业治安登记管理核心业务，连接身份证阅读仪、扫描仪、证件通等外设，打造了易公安旅业治安登记方案。安旅科技深耕旅客前台交互场景设计、旅客人像识别比对、扫描证件文字识别,从而提升了旅客入住体验、简化了前台登记流程、提高了采集数据质量。</p>
         <div class="tab-container">
@@ -59,8 +59,8 @@
         <div class="tomore">了解更多>></div>
       </div>
     </section>
-    <section class="content-container content-container2">
-      <div class="text-container text-container2">
+    <section class="content-container content-container2" ref="sedItem">
+      <div class="text-container text-container2" :class="{'run-text-2': runFlag2}">
         <h3>安全终端开放服务接入方案</h3>
         <p class="content">安旅科技以开放化、服务化、智能化为目标，通过开放平台、易公安安全终端建立了开放服务接入方案，实现了人证核验设备接入、自助机登记服务、PMS数据互通服务，为未来酒店智能化、无人化提供了基础。,从而提升了旅客入住体验、简化了前台登记流程、提高了采集数据质量。</p>
         <div class="tab-container2">
@@ -114,11 +114,16 @@ export default {
         },
       ],
       topHeight: '0px',
-      screenWidth: document.body.clientWidth
+      screenWidth: document.body.clientWidth,
+      runFlag: false,
+      runFlag2: false
     }
   },
   created() {
     this.topHeight = document.body.clientWidth/3.6 -10 + 'px'
+    setTimeout(()=> {
+      this.runFlag = true
+    },200)
   },
   mounted() {
     window.onresize = () => {
@@ -127,6 +132,16 @@ export default {
             this.screenWidth = window.screenWidth
         })()
     }
+    // console.log(this.$refs.sedItem.scrollTop)
+    window.addEventListener('scroll', (e)=> {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      let itemTop = this.$refs.sedItem.offsetTop
+      let windowHeight = window.innerHeight
+      if (scrollTop-200 + windowHeight > itemTop) {
+        this.runFlag2 = true
+      }
+    })
+    
   },
   watch: {
       screenWidth (val) {
@@ -149,20 +164,23 @@ export default {
 
 <style lang="postcss">
 .top-img{
-  /* width:100%;
-  height: 556px; */
+  width:100%;
+  /* height: 556px; */
 }
 .content-container{
   display: flex;
   flex-direction: row;
+  justify-content:space-between;
 }
 .content-container2{
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .content-container .img1{
   width: 800px;
-  overflow: hidden;
-  position: relative;
+  height: 720px;
+  /* overflow: hidden;
+  position: relative; */
+  background:transparent url('../../assets/sy_t1.png') no-repeat;
 }
 .content-container .img2{
   width: 800px;
@@ -174,6 +192,27 @@ export default {
   width: 649px;
   margin: 90px 100px 0 100px;
 }
+@media screen and (min-width: 1850px){
+  .run-text-1{
+    transform: translate(-40%,0px);
+    transition: transform 1s;
+  }
+  .run-text-2{
+    transform: translate(30%,0px);
+    transition: transform 1s;
+  }
+}
+@media screen and (max-width: 1850px){
+  .run-text-1{
+    transform: translate(-15%,0px);
+    transition: transform 1s;
+  }
+  .run-text-2{
+    transform: translate(15%,0px);
+    transition: transform 1s;
+  }
+}
+
 .content-container .text-container2{
   /* margin-left:373px; */
   /* justify-content:f; */

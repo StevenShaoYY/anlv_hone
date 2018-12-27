@@ -13,8 +13,8 @@
         <p>易公安</p>
       </div>
       <div class="text-container">
-        <div class="yigongan-pic"></div>
-        <div class="right-container">
+        <div class="yigongan-pic" :class="{'run-text-1': runFlag}"></div>
+        <div class="right-container" :class="{'run-text-2': runFlag}">
           <div class="right-header">
             <h3>互联网升级，开放服务接入</h3>
           </div>
@@ -39,13 +39,13 @@
         </div>
       </div>
     </section>
-    <section class="content-container" @click="goTo('productplan2.html')">
+    <section class="content-container" @click="goTo('productplan2.html')" ref="sedItem">
       <div class="title-container fr">
         <div class="suzhu-small"></div>
         <p>安旅速住</p>
       </div>
       <div class="text-container">
-        <div class="right-container right-sed">
+        <div class="right-container right-sed" :class="{'run-text-3': runFlag2}">
           <div class="right-header">
             <h3>功能集成，简单易用</h3>
           </div>
@@ -68,17 +68,17 @@
             </div>
           </div>
         </div>
-        <div class="suzhu-pic"></div>
+        <div class="suzhu-pic" :class="{'run-text-4': runFlag2}"></div>
       </div>
     </section>
-    <section class="content-container" @click="goTo('productplan3.html')">
+    <section class="content-container" @click="goTo('productplan3.html')" ref="thdItem">
       <div class="title-container">
         <div class="kuailu-small"></div>
         <p>安旅快录</p>
       </div>
       <div class="text-container">
-        <div class="kuailu-pic"></div>
-        <div class="right-container">
+        <div class="kuailu-pic" :class="{'run-text-1': runFlag3}"></div>
+        <div class="right-container" :class="{'run-text-2': runFlag3}">
           <div class="right-header">
             <h3>外设扩展，数据互通</h3>
           </div>
@@ -106,10 +106,10 @@
     <div class="h2-container h2-container2">
       <h2>软件产品</h2>
     </div>
-    <div class="software-container">
-        <img class="software-img" src="../../assets/software1.png" alt="">
-        <img class="software-img" src="../../assets/software2.png" alt="">
-        <img class="software-img" src="../../assets/software3.png" alt="">
+    <div class="software-container" ref="fourItem">
+        <img class="software-img" :class="{'run': runFlag4}" src="../../assets/software1.png" alt="">
+        <img class="software-img" :class="{'run': runFlag4}" src="../../assets/software2.png" alt="">
+        <img class="software-img" :class="{'run': runFlag4}" src="../../assets/software3.png" alt="">
     </div>
     <bottom></bottom>
   </div>
@@ -126,11 +126,18 @@ export default {
   data() {
     return {
       topHeight: '0px',
-      screenWidth: document.body.clientWidth
+      screenWidth: document.body.clientWidth,
+      runFlag:false,
+      runFlag2:false,
+      runFlag3:false,
+      runFlag4:false
     }
   },
   created() {
-    this.topHeight = document.body.clientWidth/3.6 -10 + 'px'
+    this.topHeight = document.body.clientWidth/3.6 -10 + 'px';
+    setTimeout(()=> {
+      this.runFlag = true
+    },200)
   },
   mounted() {
     window.onresize = () => {
@@ -139,6 +146,23 @@ export default {
             this.screenWidth = window.screenWidth
         })()
     }
+    window.addEventListener('scroll', (e)=> {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      let itemTop = this.$refs.sedItem.offsetTop
+      let itemTop2 =this.$refs.thdItem.offsetTop
+      let itemTop3 = this.$refs.fourItem.offsetTop
+      let windowHeight = window.innerHeight
+
+      if (scrollTop-150 + windowHeight > itemTop) {
+        this.runFlag2 = true
+      }
+      if (scrollTop-150 + windowHeight > itemTop2) {
+        this.runFlag3 = true
+      }
+      if (scrollTop-100 + windowHeight > itemTop3) {
+        this.runFlag4 = true
+      }
+    })
   },
   watch: {
       screenWidth (val) {
@@ -158,8 +182,8 @@ export default {
 
 <style lang="postcss">
 .top-img{
-  /* width:100%;
-  height: 556px; */
+  width:100%;
+  height: 556px;
 }
 .h2-container{
     width: 100%;
@@ -182,6 +206,7 @@ export default {
 }
 .content-container{
   width: 100%;
+  min-height:350px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -213,6 +238,10 @@ export default {
 .yigongan-pic{
   width: 300px;
   height: 300px;
+  
+  position: absolute;
+  left: -300px;
+  
   background:transparent url('../../assets/proicon.png') no-repeat;
   background-position:-100px -166px;
 }
@@ -231,6 +260,9 @@ export default {
 .suzhu-pic{
   width: 350px;
   height: 300px;
+  position: absolute;
+  right: -400px;
+
   background:transparent url('../../assets/proicon.png') no-repeat;
   background-position:-490px -184px;
 }
@@ -243,20 +275,75 @@ export default {
 .kuailu-pic{
   width: 300px;
   height: 300px;
+  position: absolute;
+  left: -300px;
+  
   background:transparent url('../../assets/proicon.png') no-repeat;
   background-position:-921px -176px;
 }
 .text-container {
   display: flex;
+  /* position: relative; */
 }
 .right-container {
+  position: absolute;
+  right: -1000px;
+  
   width: 800px;
   display: flex;
   height: 70px;
   margin-left: 100px;
+  /* margin-right: -1200px; */
   flex-direction: column;
   justify-content: flex-start;
 }
+.run-text-1{
+  animation-name: oDiv;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function:ease-in;
+}
+@keyframes oDiv{
+  0%{left:-300px;opacity: 0;}
+  80%{left:20%;}
+  100%{position:static;opacity: 1;}
+}
+.run-text-2{
+  animation-name: oDiv2;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function:ease-in;
+}
+@keyframes oDiv2{
+  0%{right:-200px;opacity: 0;}
+  80%{right:20%;}
+  100%{position:static;opacity: 1;}
+}
+
+.run-text-3{
+  animation-name: oDiv3;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function:ease-in;
+}
+@keyframes oDiv3{
+  0%{left:-300px;opacity: 0;}
+  80%{left:20%;}
+  100%{position:static;opacity: 1;}
+}
+.run-text-4{
+  animation-name: oDiv4;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function:ease-in;
+}
+@keyframes oDiv4{
+  0%{right:-200px;opacity: 0;}
+  80%{right:20%;}
+  100%{position:static;opacity: 1;}
+}
+
+
 .right-sed{ 
   width: 750px;
   margin-left: 0px;
@@ -385,5 +472,16 @@ export default {
   height: 261px;
   margin-left: 20px;
   margin-top: 30px;
+  opacity: 0;
+}
+.run{
+  animation-name: oDiv5;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function:ease-in;
+}
+@keyframes oDiv5{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
 </style>

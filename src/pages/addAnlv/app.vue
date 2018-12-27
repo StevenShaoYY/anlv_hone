@@ -148,6 +148,9 @@ color:rgba(51,51,51,1);
 line-height:30px;
 margin-left: 50px
 }
+.top-img{
+  width:100%;
+}
 
 
 </style>

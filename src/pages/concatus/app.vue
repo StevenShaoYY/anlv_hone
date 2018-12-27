@@ -102,6 +102,9 @@ export default {
   width: 600px;
   
 }
+.top-img{
+  width:100%;
+}
 .bottom-last {
   margin-bottom: 80px;
 }

@@ -95,6 +95,9 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+.top-img{
+  width:100%;
+}
 .main-c{
   width: 1200px;
   

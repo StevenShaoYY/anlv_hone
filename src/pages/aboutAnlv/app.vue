@@ -140,4 +140,7 @@ line-height:30px;
   height: 72px;
   background:transparent url('../../assets/addAlv.png') no-repeat;
 }
+.top-img{
+  width:100%;
+}
 </style>

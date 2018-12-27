@@ -147,6 +147,9 @@ export default {
 </script>
 
 <style lang="postcss">
+.top-img{
+  width:100%;
+}
 .main {
   width: 100%;
   display: flex;

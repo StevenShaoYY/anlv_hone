@@ -8,24 +8,24 @@
       <div class="main-c">
         <h3 class="title">接入说明</h3>
         <div class="content2">
-          <img class="top-img" src="../../assets/jieru.png" alt="">
+          <img class="sed-img" src="../../assets/jieru.png" alt="">
         </div>
       </div>
       <div class="main-c bottom-last">
         <h3 class="title">开发手册</h3>
         <div class="content">
-          <div class="box-item">
+          <a href="./doc/安旅盒子设备接入接口设计.pdf" download class="box-item">
             <h4>人证核验设备对接文档</h4>
             <p>介绍人证核验设备如何与开放平台对接，使设备厂商实现人证核验设备和人证核验功能接入。</p>
-          </div>
-          <div class="box-item">
+          </a>
+          <a href="./doc/安旅盒子服务接口设计-自助机.pdf" download class="box-item">
             <h4>自助机服务对接文档</h4>
             <p>介绍自助机如何与开放平台对接，使自助机可以完成旅客入住登记功能。</p>
-          </div>
-          <div class="box-item">
+          </a>
+          <a href="./doc/安旅盒子服务接口设计-PMS.pdf" download class="box-item">
             <h4>PMS服务对接文档</h4>
             <p>介绍PMS如何与开放平台对接，使PMS可以实现一次性录入，旅馆基础信息同步功能。</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -83,6 +83,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.top-img{
+  width:100%;
 }
 .main-c{
   width: 1200px;

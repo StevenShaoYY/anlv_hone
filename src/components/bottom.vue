@@ -72,16 +72,18 @@ export default {
 <style lang="css">
   footer {
     width: 100%;
+    height: 300px;
     display: flex;
     justify-content: center;
     /* background-color: #2A364A; */
     background:transparent url('../assets/bottom.png') no-repeat;
+    background-size:100% 100%;
     height: 288px;
     color: #97a3b7;
   }
   footer .w960 {
     height: 288px;
-    width: 960px;
+    flex:0 1 960px;
     display: flex;
     flex-direction: column;
   }
@@ -93,7 +95,7 @@ export default {
   footer .code-container {
     display: flex;
     flex-direction: row;
-    margin-left: 50px;
+    margin-left: 5%;
   }
   footer .sed-container {
     color: #97a3b7;
@@ -113,9 +115,10 @@ export default {
     display: flex;
     flex-direction: row;
     color: #97a3b7;
+    flex: 1;
   }
   .url-container .url-list{
-    width: 160px;
+    flex:0 1 160px;
   }
   .url-container .url-list .url-content{
     font-size: 14px;

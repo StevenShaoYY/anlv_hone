@@ -120,16 +120,25 @@ export default {
   color:rgba(102,102,102,1);
 }
 .content-item1{
+  width: 100%;
   background:transparent url('../../assets/sharecase-pic1.png') no-repeat;
+  background-size:100%;
 }
 .content-item2{
+  width: 100%;
   background:transparent url('../../assets/sharecase-pic2.png') no-repeat;
+  background-size:100%;
 }
 .content-item3{
+  width: 100%;
   background:transparent url('../../assets/sharecase-pic3.png') no-repeat;
+  background-size:100%;
 }
 .bottom-last {
   margin-bottom: 80px;
+}
+.top-img{
+  width:100%;
 }
 
 </style>
