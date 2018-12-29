@@ -5,7 +5,7 @@
         <img class="top-img" src="../../assets/caseshare.png" alt="">
     </div>
     <section class="main">
-      <div class="ct-item content-item1">
+      <div class="ct-item content-item1" id="miao1">
         <div class="text-item">
           <h3>石基昆仑PMS对接</h3>
           <p>
@@ -13,7 +13,7 @@
           </p>
         </div>
       </div>
-      <div class="ct-item content-item2">
+      <div class="ct-item content-item2" id="miao2">
         <div class="text-item">
           <h3>华住易掌柜自助机对接</h3>
           <p>
@@ -21,7 +21,7 @@
           </p>
         </div>
       </div>
-      <div class="ct-item content-item3">
+      <div class="ct-item content-item3" id="miao3">
         <div class="text-item">
           <h3>魔点人证核验设备对接</h3>
           <p>
@@ -79,6 +79,73 @@ export default {
 </script>
 
 <style lang="postcss">
+@media screen and (max-width: 1200px){
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-c{
+  padding: 0 40px
+}
+.ct-item{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-item1 .text-item{
+  margin-left: 50%;
+}
+.content-item2 .text-item{
+  margin-right: 50%;
+}
+.content-item3 .text-item{
+  margin-left: 50%;
+}
+
+.ct-item h3{
+  padding: 0 20px;
+  font-size:30px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.ct-item p{
+  margin-top: 25px;
+  /* width: 515px; */
+  padding: 0 20px;
+  font-size:16px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+.content-item1{
+  width: 100%;
+  background:transparent url('../../assets/sharecase-pic1.png') no-repeat;
+  background-size:100% 100%;
+}
+.content-item2{
+  width: 100%;
+  background:transparent url('../../assets/sharecase-pic2.png') no-repeat;
+  background-size:100% 100%;
+}
+.content-item3{
+  width: 100%;
+  background:transparent url('../../assets/sharecase-pic3.png') no-repeat;
+  background-size:100% 100%;
+}
+.bottom-last {
+  margin-bottom: 80px;
+}
+.top-img{
+  width:100%;
+}
+}
+
+@media screen and (min-width: 1200px){
 .main {
   width: 100%;
   display: flex;
@@ -122,17 +189,17 @@ export default {
 .content-item1{
   width: 100%;
   background:transparent url('../../assets/sharecase-pic1.png') no-repeat;
-  background-size:100%;
+  background-size:100% 100%;
 }
 .content-item2{
   width: 100%;
   background:transparent url('../../assets/sharecase-pic2.png') no-repeat;
-  background-size:100%;
+  background-size:100% 100%;
 }
 .content-item3{
   width: 100%;
   background:transparent url('../../assets/sharecase-pic3.png') no-repeat;
-  background-size:100%;
+  background-size:100% 100%;
 }
 .bottom-last {
   margin-bottom: 80px;
@@ -140,5 +207,5 @@ export default {
 .top-img{
   width:100%;
 }
-
+}
 </style>

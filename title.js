@@ -6,9 +6,9 @@ module.exports = {
     'usebook': '使用手册',
     'openplan': '开放平台',
     'downloadcenter': '下载中心',
-    'concatus': '联系我们',
+    'contact': '联系我们',
     'caseshare': '案例分享',
-    'panter': '合作伙伴',
+    'partner': '合作伙伴',
     'aboutAnlv': '关于安旅',
     'addAnlv': '加入安旅'
 }

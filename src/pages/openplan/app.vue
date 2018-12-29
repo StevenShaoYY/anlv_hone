@@ -11,7 +11,7 @@
           <img class="sed-img" src="../../assets/jieru.png" alt="">
         </div>
       </div>
-      <div class="main-c bottom-last">
+      <div class="main-c bottom-last" id="miao2">
         <h3 class="title">开发手册</h3>
         <div class="content">
           <a href="./doc/安旅盒子设备接入接口设计.pdf" download class="box-item">
@@ -78,19 +78,48 @@ export default {
 </script>
 
 <style lang="postcss">
-.main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media screen and (max-width:1200px){
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 547px);
+  }
+  .main-c{
+    padding: 0 20px;
 }
+.content .box-item{
+  width: 30%;
+  height: 161px;
+  border:1px solid rgba(204, 204, 204, 1);
+  cursor: pointer;
+}
+ 
+}
+@media screen and (min-width:1200px){
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-c{
+    width: 1200px;
+    
+  }
+  .content .box-item{
+  width: 390px;
+  height: 161px;
+  border:1px solid rgba(204, 204, 204, 1);
+  cursor: pointer;
+}
+}
+
 .top-img{
   width:100%;
 }
-.main-c{
-  width: 1200px;
-  
-}
+
 .bottom-last {
   margin-bottom: 80px;
 }
@@ -111,12 +140,7 @@ export default {
   justify-content: center;
   margin-top: 30px;
 }
-.content .box-item{
-  width: 390px;
-  height: 161px;
-  border:1px solid rgba(204, 204, 204, 1);
-  cursor: pointer;
-}
+
 .box-item p{
   font-size:16px;
   font-family:MicrosoftYaHei;

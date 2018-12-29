@@ -10,7 +10,7 @@
           <li class="menu-item dropdown" v-if="item.child" :class="{'active':item.code[0]==active[0]}">
             {{item.name}}
             <ul class="submenu-container"  v-if="item.child">
-              <li class="submenu-item" v-for="(itemm, indexx) in item.child" :key="indexx"  @click="goTo(itemm.path)" :class="{'active':itemm.code==active}">
+              <li class="submenu-item" v-for="(itemm, indexx) in item.child" :key="indexx"  @click="goTo(itemm.path)" :class="{'sub-active':itemm.code==active}">
                 {{itemm.name}}
               </li>
             </ul>
@@ -82,7 +82,7 @@ export default {
             },
             {
               name: '联系我们',
-              path: 'concatus.html',
+              path: 'contact.html',
               code: '4-4'
             }
           ]
@@ -94,7 +94,7 @@ export default {
         },
         {
           name: '合作伙伴',
-          path: 'panter.html',
+          path: 'partner.html',
           code: '6'
         },
         {
@@ -157,30 +157,46 @@ export default {
     padding: 0 15px;
     cursor: pointer;
   } 
+  @media screen and (max-width:1250px) {
+    .menu-div:nth-last-child(1) .submenu-container{
+      right: 0px;
+    }
+  }
   .w960 .submenu-container{
-      display: none;
+      opacity: 0;
+      visibility: hidden;
       position: absolute;
       background-color: #f9f9f9;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
       color:rgba(0,0,0,1);
-  }
+    }
+    .dropdown:hover .submenu-container {
+      visibility: visible;
+      opacity: 1;
+      z-index: 20;
+      transition: all 0.5s linear;
+    }
+  
   .w960 .submenu-container .submenu-item{
       color:rgba(0,0,0,1);
       padding: 0 40px;
   }
   .menu-item:hover {
-    background-color:#FF961A;
+    background-color:#eeeeee;
+    color:#FF961A
   }
   .active {
-    background-color:#FF961A;
+    color:rgba(0,0,0,1) !important;
+    background-color:#FF961A !important;
   }
-  .dropdown:hover .submenu-container {
-    display: block;
-    z-index: 20;
+  .sub-active{
+    color:#FF961A !important;
   }
+ 
   .submenu-container .submenu-item:hover{
-    background-color:#FF961A;
+    background-color:#eeeeee;
+    color:#FF961A
   }
 </style>

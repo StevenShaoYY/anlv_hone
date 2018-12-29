@@ -36,7 +36,7 @@
         <div class="item-header">
           <div class="title-container">
             <div class="line"></div>
-            <h3 class="title">增加版方案</h3>
+            <h3 class="title">增强版方案</h3>
             <div class="line"></div>
           </div>
           <div class="header-text" >支持PMS数据复用、PC端登记管理</div>
@@ -109,26 +109,69 @@ export default {
 </script>
 
 <style lang="postcss">
+@media screen and (max-width:1200px){
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 547px);
+  }
+  .jieshao-content { 
+    padding: 0 20px;
+    margin: 80px 0 0 0;
+  }
+  .item-content {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+  .item-main .it-text {
+    margin-left: 40px;
+  }
+  .js-img {
+    width: 70%;
+    height: 392px;
+    text-align: right;
+  }
+  
+}
+@media screen and (min-width:1200px){
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .jieshao-content { 
+    width: 1200px;
+    margin: 80px 0 0 0;
+  }
+  .item-content {
+    width: 1200px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+  .item-main .it-text {
+    margin-left: 150px;
+  }
+  .js-img {
+  width: 870px;
+  height: 392px;
+  text-align: right;
+}
+ 
+}
+
 .top-img{
   width:100%;
 }
-.main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.jieshao-content { 
-  width: 1200px;
-  margin: 80px 0 0 0;
-}
-.item-content {
-  width: 1200px;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
-}
+
+
+
 .title-container{
   display: flex;
 
@@ -153,9 +196,7 @@ export default {
   display: flex;
   margin-top: 80px;
 }
-.item-main .it-text {
-  margin-left: 150px;
-}
+
 .item-main .it-text .text-header {
   width:206px;
   height:32px;
@@ -172,11 +213,7 @@ export default {
   font-size: 16px;
   line-height: 30px;
 }
-.js-img {
-  width: 870px;
-  height: 392px;
-  text-align: right;
-}
+
 .first{
   margin-top: 20px;
 }

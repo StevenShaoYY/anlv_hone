@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <top-bar :active="'2'"></top-bar>
-    <div :height="topHeight">
+    <div>
         <img class="top-img" src="../../assets/proheader.png" alt="">
     </div>
     <div class="h2-container">
@@ -181,222 +181,429 @@ export default {
 </script>
 
 <style lang="postcss">
-.top-img{
-  width:100%;
-  height: 556px;
-}
-.h2-container{
+@media screen and (min-width: 1200px){
+  .top-img{
+    width:100%;
+  }
+  .h2-container{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .h2-container2{
+    margin-top: 150px;
+  }
+  .h2-container h2{
+    height: 130px;
+    width: 1200px;
+    line-height: 130px;
+    font-size:36px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(0,0,0,1);
+  }
+  .content-container{
     width: 100%;
+    min-height:350px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-}
-.h2-container2{
-  margin-top: 150px;
-}
-.h2-container h2{
-  height: 130px;
-  width: 1200px;
-  line-height: 130px;
-  font-size:36px;
-  font-family:MicrosoftYaHei;
-  font-weight:400;
-  color:rgba(0,0,0,1);
-}
-.content-container{
-  width: 100%;
-  min-height:350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 100px;
-  cursor: pointer;
-}
-.content-container + .content-container {
-  margin-top: 200px;
-}
-.title-container {
-  width: 1200px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 50px;
-}
-.fr {
-  justify-content: flex-end;
-  padding-right: 100px;
-}
-.title-container p{
-  padding-left: 12px;
-  font-size:30px;
-  font-family:MicrosoftYaHei;
-  font-weight:400;
-  color:rgba(1,1,1,1); 
-}
-.yigongan-pic{
-  width: 300px;
-  height: 300px;
-  
-  position: absolute;
-  left: -300px;
-  
-  background:transparent url('../../assets/proicon.png') no-repeat;
-  background-position:-100px -166px;
-}
-.yigongan-small{
-  width: 50px;
-  height: 43px;
-  background:transparent url('../../assets/proicon.png') no-repeat;
-  background-position:-246px -68px;
-}
-.suzhu-small{
-  width: 72px;
-  height: 36px;
-  background:transparent url('../../assets/proicon.png') no-repeat;
-  background-position:-330px -70px;
-}
-.suzhu-pic{
-  width: 350px;
-  height: 300px;
-  position: absolute;
-  right: -400px;
+    margin-top: 100px;
+    cursor: pointer;
+  }
+  .content-container + .content-container {
+    margin-top: 200px;
+  }
+  .title-container {
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 50px;
+  }
+  .fr {
+    justify-content: flex-end;
+    padding-right: 100px;
+  }
+  .title-container p{
+    padding-left: 12px;
+    font-size:30px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(1,1,1,1); 
+  }
+  .yigongan-pic{
+    width: 300px;
+    height: 300px;
+    
+    position: absolute;
+    left: -300px;
+    
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-100px -166px;
+  }
+  .yigongan-small{
+    width: 50px;
+    height: 43px;
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-246px -68px;
+  }
+  .suzhu-small{
+    width: 72px;
+    height: 36px;
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-330px -70px;
+  }
+  .suzhu-pic{
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    right: -400px;
 
-  background:transparent url('../../assets/proicon.png') no-repeat;
-  background-position:-490px -184px;
-}
-.kuailu-small{
-  width: 58px;
-  height: 54px;
-  background:transparent url('../../assets/proicon.png') no-repeat;
-  background-position:-422px -61px;
-}
-.kuailu-pic{
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  left: -300px;
-  
-  background:transparent url('../../assets/proicon.png') no-repeat;
-  background-position:-921px -176px;
-}
-.text-container {
-  display: flex;
-  /* position: relative; */
-}
-.right-container {
-  position: absolute;
-  right: -1000px;
-  
-  width: 800px;
-  display: flex;
-  height: 70px;
-  margin-left: 100px;
-  /* margin-right: -1200px; */
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.run-text-1{
-  animation-name: oDiv;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function:ease-in;
-}
-@keyframes oDiv{
-  0%{left:-300px;opacity: 0;}
-  80%{left:20%;}
-  100%{position:static;opacity: 1;}
-}
-.run-text-2{
-  animation-name: oDiv2;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function:ease-in;
-}
-@keyframes oDiv2{
-  0%{right:-200px;opacity: 0;}
-  80%{right:20%;}
-  100%{position:static;opacity: 1;}
-}
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-490px -184px;
+  }
+  .kuailu-small{
+    width: 58px;
+    height: 54px;
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-422px -61px;
+  }
+  .kuailu-pic{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: -300px;
+    
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-921px -176px;
+  }
+  .text-container {
+    display: flex;
+    /* position: relative; */
+  }
+  .right-container {
+    position: absolute;
+    right: -1000px;
+    
+    width: 800px;
+    display: flex;
+    height: 70px;
+    margin-left: 100px;
+    /* margin-right: -1200px; */
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .run-text-1{
+    animation-name: oDiv;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-in;
+  }
+  @keyframes oDiv{
+    0%{left:-300px;opacity: 0;}
+    80%{left:20%;}
+    100%{position:static;opacity: 1;}
+  }
+  .run-text-2{
+    animation-name: oDiv2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-in;
+  }
+  @keyframes oDiv2{
+    0%{right:-200px;opacity: 0;}
+    80%{right:20%;}
+    100%{position:static;opacity: 1;}
+  }
 
-.run-text-3{
-  animation-name: oDiv3;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function:ease-in;
-}
-@keyframes oDiv3{
-  0%{left:-300px;opacity: 0;}
-  80%{left:20%;}
-  100%{position:static;opacity: 1;}
-}
-.run-text-4{
-  animation-name: oDiv4;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function:ease-in;
-}
-@keyframes oDiv4{
-  0%{right:-200px;opacity: 0;}
-  80%{right:20%;}
-  100%{position:static;opacity: 1;}
-}
+  .run-text-3{
+    animation-name: oDiv3;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-in;
+  }
+  @keyframes oDiv3{
+    0%{left:-300px;opacity: 0;}
+    80%{left:20%;}
+    100%{position:static;opacity: 1;}
+  }
+  .run-text-4{
+    animation-name: oDiv4;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-in;
+  }
+  @keyframes oDiv4{
+    0%{right:-200px;opacity: 0;}
+    80%{right:20%;}
+    100%{position:static;opacity: 1;}
+  }
 
 
+  .right-sed{ 
+    width: 750px;
+    margin-left: 0px;
+    margin-right: 100px;
+  }
+  .right-header {
+    border-bottom: 3px solid rgba(233,233,233,1);
+  }
+  .right-header h3{
+    font-size:24px;
+    line-height: 70px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+  }
+
+
+
+  .tab-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .tab-container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .tab-item {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 130px;
+    margin-top: 40px;
+  }
+  .tab-item p {
+    font-size:20px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:50px;
+    white-space:nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+  }
+  .software-img{
+    width: 395px;
+    height: 261px;
+    margin-left: 20px;
+    margin-top: 30px;
+    opacity: 0;
+  }
+  .run{
+    animation-name: oDiv5;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-in;
+  }
+  @keyframes oDiv5{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+  }
+
+  .software-container {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .top-img{
+    width:100%;
+  }
+  .h2-container{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .h2-container2{
+    margin-top: 150px;
+  }
+  .h2-container h2{
+    height: 130px;
+    /* width: 1200px; */
+    line-height: 130px;
+    font-size:36px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(0,0,0,1);
+  }
+  .content-container{
+    width: 100%;
+    min-height:350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 100px;
+    cursor: pointer;
+  }
+  .content-container + .content-container {
+    margin-top: 200px;
+  }
+  .title-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 50px;
+  }
+  .fr {
+    justify-content: flex-end;
+    padding-right: 100px;
+  }
+  .title-container p{
+    padding-left: 12px;
+    font-size:30px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(1,1,1,1); 
+  }
+  .yigongan-pic{
+    width: 300px;
+    height: 300px;
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-100px -166px;
+  }
+  .yigongan-small{
+    width: 50px;
+    height: 43px;
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-246px -68px;
+  }
+  .suzhu-small{
+    width: 72px;
+    height: 36px;
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-330px -70px;
+  }
+  .suzhu-pic{
+    width: 350px;
+    height: 300px;
+
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-490px -184px;
+  }
+  .kuailu-small{
+    width: 58px;
+    height: 54px;
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-422px -61px;
+  }
+  .kuailu-pic{
+    width: 300px;
+    height: 300px;
+    background:transparent url('../../assets/proicon.png') no-repeat;
+    background-position:-921px -176px;
+  }
+  .text-container {
+    display: flex;
+    /* position: relative; */
+  }
+  .right-container {
+    width: calc(100% - 350px);
+    display: flex;
+    height: 70px;
+    margin-left: 100px;
+    /* margin-right: -1200px; */
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 .right-sed{ 
-  width: 750px;
-  margin-left: 0px;
-  margin-right: 100px;
-}
-.right-header {
-  border-bottom: 3px solid rgba(233,233,233,1);
-}
-.right-header h3{
-  font-size:24px;
-  line-height: 70px;
-  font-family:MicrosoftYaHei;
-  font-weight:400;
-  color:rgba(102,102,102,1);
-}
+    /* width: 750px; */
+    width: calc(100% - 350px);
+    margin-left: 0px;
+    /* margin-right: 100px; */
+  }
+  .right-header {
+    border-bottom: 3px solid rgba(233,233,233,1);
+  }
+  .right-header h3{
+    font-size:24px;
+    line-height: 70px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+  }
 
 
+  .tab-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .tab-container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  .tab-item {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 130px;
+    margin-top: 40px;
+  }
+  .tab-item p {
+    font-size:20px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:50px;
+    white-space:nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+  }
+  .software-img{
+    width: 30%;
+    height: 261px;
+    margin-left: 20px;
+    margin-top: 30px;
+    opacity: 0;
+  }
+  .run{
+    animation-name: oDiv5;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function:ease-in;
+  }
+  @keyframes oDiv5{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+  }
 
-.tab-container {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  .software-container {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+  }
 }
-.tab-container2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-.tab-item {
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 130px;
-  margin-top: 40px;
-}
-.tab-item p {
-  font-size:20px;
-  font-family:MicrosoftYaHei;
-  font-weight:400;
-  color:rgba(102,102,102,1);
-  line-height:50px;
-  white-space:nowrap;
-  width: 100%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  text-align: center;
-}
+
 .icon {
   background:transparent url('../../assets/proicon.png') no-repeat;
 }
@@ -460,28 +667,5 @@ export default {
   width: 90px;
   height: 85px;
   background-position:-1871px -401px;
-}
-.software-container {
-  display: flex;
-  justify-content: center;
-  height: 400px;
-
-}
-.software-img{
-  width: 395px;
-  height: 261px;
-  margin-left: 20px;
-  margin-top: 30px;
-  opacity: 0;
-}
-.run{
-  animation-name: oDiv5;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function:ease-in;
-}
-@keyframes oDiv5{
-  0%{opacity: 0;}
-  100%{opacity: 1;}
 }
 </style>

@@ -58,6 +58,95 @@ export default {
 </script>
 
 <style lang="postcss">
+@media screen and (max-width: 1200px){
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+min-height: calc(100vh - 547px);
+}
+.main-c{
+  /* width: 1200px; */
+  padding: 0 20px;
+}
+.bottom-last {
+  margin-bottom: 80px;
+}
+.img-container img + img{
+  margin-left: 10px;
+}
+.last-img {
+  margin-left: 0px !important;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+.title{
+  margin-top: 50px;
+  font-size:30px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.content2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 16px;
+  margin-bottom: 100px;
+}
+
+.add-box{
+  height: 262px;
+  width: 100%;
+  background:#F2F3f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-box .box-item{
+  width: 351px;
+  height: 210px;
+  background:rgba(255,255,255,1);
+  border:1px solid rgba(204, 204, 204, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.add-box .box-item + .box-item {
+  margin-left: 100px;
+}
+.box-item p {
+  font-size:24px;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(0,0,0,1);
+line-height:30px;
+}
+.icon-1{
+  width: 82px;
+  height: 82px;
+  background:transparent url('../../assets/proicon.png') no-repeat;
+  background-position:-738px -47px;
+}
+.icon-2{
+  width: 56px;
+  height: 72px;
+  background:transparent url('../../assets/addAlv.png') no-repeat;
+}
+.top-img{
+  width:100%;
+}
+}
+@media screen and (min-width: 1200px){
 .main {
   width: 100%;
   display: flex;
@@ -142,5 +231,6 @@ line-height:30px;
 }
 .top-img{
   width:100%;
+}
 }
 </style>

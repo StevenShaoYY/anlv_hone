@@ -152,5 +152,13 @@ margin-left: 50px
   width:100%;
 }
 
-
+@media screen and (max-width:1200px){
+.main{
+   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 547px);
+}  
+}
 </style>

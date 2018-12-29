@@ -184,6 +184,32 @@ export default {
 </script>
 
 <style lang="postcss">
+@media screen and (max-width:1200px){
+  .jieshao-content { 
+    padding: 0 20px;
+    margin: 80px 0 0 0;
+  }
+  .item-content {
+  display:flex;
+    padding: 0 20px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+}
+@media screen and (min-width:1200px){
+  .jieshao-content { 
+    width: 1200px;
+    margin: 80px 0 0 0;
+  }
+  .item-content {
+  width: 1200px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+}
 .top-img{
   width:100%;
 }
@@ -193,17 +219,7 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.jieshao-content { 
-  width: 1200px;
-  margin: 80px 0 0 0;
-}
-.item-content {
-  width: 1200px;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
-}
+
 .title-container{
   display: flex;
 

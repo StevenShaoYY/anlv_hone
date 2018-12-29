@@ -11,23 +11,23 @@
           <ul class="url-list">
             <li class="url-title">服务支持</li>
             <li class="url-content" @click="goTo('downloadcenter.html')">下载中心</li>
-            <li class="url-content" @click="goTo('concatus.html')">联系我们</li>
+            <li class="url-content" @click="goTo('contact.html')">联系我们</li>
           </ul> 
           <ul class="url-list">
             <li class="url-title">旅业登记</li>
-            <li class="url-content" @click="goTo('usebook.html')">开通说明</li>
+            <li class="url-content" @click="goTo('fixplan1.html')">解决方案</li>
             <li class="url-content" @click="goTo('usebook.html')">使用手册</li>
           </ul> 
           <ul class="url-list">
             <li class="url-title">开放平台</li>
             <li class="url-content" @click="goTo('openplan.html')">接入说明</li>
-            <li class="url-content" @click="goTo('openplan.html')">开发手册</li>
+            <li class="url-content" @click="goTo('openplan.html#miao2')">开发手册</li>
           </ul> 
           <ul class="url-list">
             <li class="url-title">案例分享</li>
             <li class="url-content" @click="goTo('caseshare.html')">PMS对接</li>
-            <li class="url-content" @click="goTo('caseshare.html')">自助机对接</li>
-            <li class="url-content" @click="goTo('caseshare.html')">人证核验设备对接</li>
+            <li class="url-content" @click="goTo('caseshare.html#miao2')">自助机对接</li>
+            <li class="url-content" @click="goTo('caseshare.html#miao3')">人证核验设备对接</li>
           </ul>
         </div>
         <div class="code-container">
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="sed-container">
-        <p>浙ICP备xxxxx号© 2018 All rights reserved.Powered by AnlvTechnology.</p>
+        <p>Copyright© 2018 Powered by AnlvTechnology | 浙ICP备17005608号-1</p>
       </div>
     </div>
   </footer>
@@ -98,7 +98,7 @@ export default {
     margin-left: 5%;
   }
   footer .sed-container {
-    color: #97a3b7;
+    color: #ffffff;
     margin-bottom: 30px;
   }
   .code-item {
@@ -124,10 +124,12 @@ export default {
     font-size: 14px;
     line-height: 40px;
     cursor: pointer;
+    color: #999999;
   }
   .url-container .url-title {
     font-size: 20px;
     line-height: 50px;
     font-weight: 500;
+    color: #ffffff;
   }
 </style>
